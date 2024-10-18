@@ -9,19 +9,13 @@ To write a program to implement the the Logistic Regression Model to Predict the
 
 ## Algorithm
 
-STEP 1:Start
-
-STEP 2:Load and preprocess the dataset: drop irrelevant columns, handle missing values, and encode categorical variables using LabelEncoder.
-
-STEP 3:Split the data into training and test sets using train_test_split.
-
-STEP 4:Create and fit a logistic regression model to the training data.
-
-STEP 5:Predict the target variable on the test set and evaluate performance using accuracy, confusion matrix, and classification report.
-
-STEP 6:Display the confusion matrix using metrics.ConfusionMatrixDisplay and plot the results.
-
-STEP 7:End
+1. **Load Data**: Read the dataset.
+2. **Preprocess**: Drop unnecessary columns and check for missing values.
+3. **Encode**: Convert categorical features to numerical values using `LabelEncoder`.
+4. **Split Data**: Divide into training and testing sets (80/20).
+5. **Train Model**: Fit a `LogisticRegression` model on the training data.
+6. **Predict**: Generate predictions for the test set.
+7. **Evaluate**: Calculate accuracy, confusion matrix, and classification report.
 
 ## Program:
 ```
@@ -33,7 +27,9 @@ RegisterNumber: 212223040021
 import pandas as pd
 data=pd.read_csv('Placement_Data.csv')
 data.head()
-dta
+data1=data.copy()
+data1 = data1.drop(["sl_no","salary"],axis=1)
+data1.head()
 data1.isnull().sum()
 data1.duplicated().sum()
 from sklearn.preprocessing import LabelEncoder
@@ -64,17 +60,32 @@ accuracy
 from sklearn.metrics import confusion_matrix
 confusion=confusion_matrix(y_test,y_pred)
 confusion
-
+from sklearn.metrics import classification_report 
+classification_report1 = classification_report(y_test,y_pred) 
+print(classification_report1)
 ```
 
 ## Output:
 
-![image](https://github.com/user-attachments/assets/70daec72-ba7c-452d-94e8-c3c8a2a7332e)
-![image](https://github.com/user-attachments/assets/83e6aab0-377a-451c-8195-20b4ee73bb33)
-![image](https://github.com/user-attachments/assets/80c14aca-7786-4ae6-8896-af16a0156c54)
-![image](https://github.com/user-attachments/assets/d5d8cf55-5dec-414e-9290-1cba5ad36f8a)
-![image](https://github.com/user-attachments/assets/73cd8dc6-f427-41b2-9b49-c614032e285b)
-![image](https://github.com/user-attachments/assets/0ec9d756-5cfc-455b-b099-e7b82caa3011)
+![image](https://github.com/user-attachments/assets/fead22be-241b-44f1-9452-dbef9e082cfb)
+
+![image](https://github.com/user-attachments/assets/1b75be37-f56e-47ae-8fbe-e1bb3466927e)
+
+![image](https://github.com/user-attachments/assets/a3768c13-8140-4991-b642-0305a4296298)
+
+![image](https://github.com/user-attachments/assets/d5e3b26e-0998-4150-8942-5f29e8ab1b31)
+
+![image](https://github.com/user-attachments/assets/e2307ff8-e131-41a3-ae29-f6c0ffd910ca)
+
+![image](https://github.com/user-attachments/assets/a1416522-ed8c-433f-9e96-36cd47ce03a6)
+
+![image](https://github.com/user-attachments/assets/2d78c3df-5fe5-4925-9b9e-c7b1377d68b0)
+
+![image](https://github.com/user-attachments/assets/5ff45916-2eb3-4470-9298-5b693d482829)
+
+![image](https://github.com/user-attachments/assets/4d010145-e387-4cc3-9d54-7da5d5af04af)
+
+
 
 ## Result:
 Thus the program to implement the the Logistic Regression Model to Predict the Placement Status of Student is written and verified using python programming.
